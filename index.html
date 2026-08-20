@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Voice Cart — Shopping Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>Voice Cart</h1>
+    <p class="tagline">Say it. It's on the list.</p>
+  </header>
+
+  <main class="app-shell">
+
+    <!-- Voice control panel -->
+    <section class="panel voice-panel">
+      <div class="mic-row">
+        <button id="micBtn" class="mic-btn" aria-label="Start listening">
+          <svg viewBox="0 0 24 24" class="mic-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M19 11a7 7 0 0 1-14 0M12 18v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="mic-meta">
+          <label for="langSelect" class="lang-label">Language</label>
+          <select id="langSelect"></select>
+        </div>
+      </div>
+      <p id="status" class="status">Tap the mic and speak, or type a command below.</p>
+      <p id="transcript" class="transcript" aria-live="polite"></p>
+
+      <form id="manualForm" class="manual-form">
+        <input id="manualInput" type="text" placeholder='Try: "Add 2 bottles of water"' autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+
+      <div class="examples">
+        <span>Try saying:</span>
+        <em>"Add milk"</em> · <em>"I need 3 apples"</em> · <em>"Remove bread"</em> · <em>"Find toothpaste under $5"</em>
+      </div>
+    </section>
+
+    <!-- Shopping list -->
+    <section class="panel">
+      <h2>Your List</h2>
+      <ul id="shoppingList" class="shopping-list"></ul>
+    </section>
+
+    <!-- Smart suggestions -->
+    <section class="panel">
+      <h2>Smart Suggestions</h2>
+      <div id="suggestions" class="suggestions"></div>
+    </section>
+
+    <!-- Search results -->
+    <section class="panel">
+      <h2>Search Results</h2>
+      <div id="searchResults" class="search-results">
+        <p class="empty">Say "Find organic apples" or "Search for toothpaste under $5" to see results here.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/nlp.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
