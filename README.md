@@ -10,8 +10,6 @@ This is a plain HTML/CSS/JavaScript site — no backend, no framework, no paid A
 
 Smart suggestions come from two simple rules: items bought more than once but missing from the current list ("running low"), and a static seasonal list by month. Substitutes use a small lookup table (milk → almond/oat milk). The list, purchase history, and budget are saved in the browser's localStorage, so nothing is lost between visits, without needing a real database.
 
-I kept the stack this small on purpose — it's an 8-hour assignment, and a static site with no dependencies is easier to review, easier to run, and free to host.
-
 ## Features
 
 * Add, remove, and search items by voice or by typing
